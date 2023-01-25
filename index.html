@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload="AutoSetDecimal()">
+    <div id="container">
+        <div id="text">CONVERTER?</div>
+        <div id="buttons">
+            <div class="button" id="decimal" onmouseleave="DecimalButtonLeave()" onmouseover="DecimalButtonHover()" onclick="BuildDecimalKeyboard()">DEC</div>
+            <div class="button" id="binary" onmouseleave="BinaryButtonLeave()" onmouseover="BinaryButtonHover()" onclick="BuildBinaryKeyboard()">BIN</div>
+            <div class="button" id="hexadecimal" onmouseleave="HexadecimalButtonLeave()" onmouseover="HexadecimalButtonHover()" onclick="BuildHexadecimalKeyboard()">HEX</div>
+        </div>
+        <div id="screen">Example text.</div>
+        <div id="keyboard">
+            <div id="mode"></div>
+        </div>
+    </div>
+</body>
+</html>

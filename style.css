@@ -1,0 +1,33 @@
+#buttons{
+    float: left;
+    width: 5%;
+}
+#container{
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    font-size: larger;
+}
+.button{
+    border: 5px forestgreen;
+    border-style: dashed;
+    margin-bottom: 10px;
+}
+#screen{
+    text-align: right;
+    width:93%;
+    border: 10px black;
+    border-style: solid;
+    float: right;
+}
+#mode{
+    float: right;
+    color: green;
+}
+.number{
+    float: left;
+    margin-right: 10px;
+    margin-left: 5px;
+    border: 5px blueviolet;
+    border-style: solid;
+}
