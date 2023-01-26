@@ -4,7 +4,6 @@ var Display = new Array(0);
 function BuildHexadecimalKeyboard()
 {
     var numbers = new Array(16);
-
     numbers[0] = 0;
     numbers[1] = 1;
     numbers[2] = 2;
@@ -22,35 +21,29 @@ function BuildHexadecimalKeyboard()
     numbers[14] = "E";
     numbers[15] = "F";
 	var div_value ="";
-	
 	for (i=0; i<=15; i++)
 	{
 		var element = "num" + i;
 		div_value = div_value + '<div class="number" onclick="EnterToScreen('+i+')" id="'+element+'">'+numbers[i]+'</div>';
 	}
-	
-	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: 16</div>`+'<div class="number" onclick="ClearScreen()" id="clear">C</div>';
+	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: HEX</div>`+'<div class="number" onclick="ClearScreen()" id="clear">Clear</div>';
 }
 function BuildBinaryKeyboard()
 {
     var numbers = new Array(2);
-
     numbers[0] = 0;
     numbers[1] = 1;
 	var div_value ="";
-	
 	for (i=0; i<=1; i++)
 	{
 		var element = "num" + i;
 		div_value = div_value + '<div class="number" onclick="EnterToScreen('+i+')" id="'+element+'">'+numbers[i]+'</div>';
 	}
-	
-	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: 2</div>`+'<div class="number" onclick="ClearScreen()" id="clear">C</div>';
+	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: BIN</div>`+'<div class="number" onclick="ClearScreen()" id="clear">Clear</div>';
 }
 function BuildDecimalKeyboard()
 {
     var numbers = new Array(10);
-
     numbers[0] = 0;
     numbers[1] = 1;
     numbers[2] = 2;
@@ -62,14 +55,12 @@ function BuildDecimalKeyboard()
     numbers[8] = 8;
     numbers[9] = 9;
 	var div_value ="";
-	
 	for (i=0; i<=9; i++)
 	{
 		var element = "num" + i;
 		div_value = div_value + '<div class="number" onclick="EnterToScreen('+i+')" id="'+element+'">'+numbers[i]+'</div>';
 	}
-	
-	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: 10</div>`+'<div class="number" onclick="ClearScreen()" id="clear">C</div>';
+	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: DEC</div>`+'<div class="number" onclick="ClearScreen()" id="clear">Clear</div>';
 }
 //before keyboard, all they had to do was switch a thingy, now the new functions handle that too
 function SwitchToDecimal(){
@@ -130,10 +121,7 @@ function EnterToScreen(inputnumvalue){
 }
 //simple screen clear function
 function ClearScreen(){
-    // Loop run while array length not zero
     while (Display.length) {
-     
-        // Remove elements from array
         Display.pop();
     }
     document.getElementById("screen").innerHTML = "0"

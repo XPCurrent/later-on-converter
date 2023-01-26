@@ -27,7 +27,7 @@
 .number{
     float: left;
     margin-right: 10px;
-    margin-left: 5px;
+    margin-left: 25px;
     border: 5px blueviolet;
     border-style: solid;
 }
