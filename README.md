@@ -1,2 +1,2 @@
-# i-think-its-a-converter
-idk another random school project
+# This is supposed to be a converter?
+RN it's just a number writer lolz
