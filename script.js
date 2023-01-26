@@ -27,6 +27,7 @@ function BuildHexadecimalKeyboard()
 		div_value = div_value + '<div class="number" onclick="EnterToScreen('+i+')" id="'+element+'">'+numbers[i]+'</div>';
 	}
 	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: HEX</div>`+'<div class="number" onclick="ClearScreen()" id="clear">Clear</div>';
+    ClearScreen();
 }
 function BuildBinaryKeyboard()
 {
@@ -40,6 +41,7 @@ function BuildBinaryKeyboard()
 		div_value = div_value + '<div class="number" onclick="EnterToScreen('+i+')" id="'+element+'">'+numbers[i]+'</div>';
 	}
 	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: BIN</div>`+'<div class="number" onclick="ClearScreen()" id="clear">Clear</div>';
+    ClearScreen();
 }
 function BuildDecimalKeyboard()
 {
@@ -61,6 +63,7 @@ function BuildDecimalKeyboard()
 		div_value = div_value + '<div class="number" onclick="EnterToScreen('+i+')" id="'+element+'">'+numbers[i]+'</div>';
 	}
 	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: DEC</div>`+'<div class="number" onclick="ClearScreen()" id="clear">Clear</div>';
+    ClearScreen();
 }
 //before keyboard, all they had to do was switch a thingy, now the new functions handle that too
 function SwitchToDecimal(){
