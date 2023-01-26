@@ -1,3 +1,5 @@
+//var for display
+var Display = new Array(0);
 //3 functions that build the keyboards for specific modes
 function BuildHexadecimalKeyboard()
 {
@@ -27,7 +29,7 @@ function BuildHexadecimalKeyboard()
 		div_value = div_value + '<div class="number" onclick="EnterToScreen('+i+')" id="'+element+'">'+numbers[i]+'</div>';
 	}
 	
-	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">16</div>`;
+	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: 16</div>`+'<div class="number" onclick="ClearScreen()" id="clear">C</div>';
 }
 function BuildBinaryKeyboard()
 {
@@ -43,7 +45,7 @@ function BuildBinaryKeyboard()
 		div_value = div_value + '<div class="number" onclick="EnterToScreen('+i+')" id="'+element+'">'+numbers[i]+'</div>';
 	}
 	
-	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">2</div>`;
+	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: 2</div>`+'<div class="number" onclick="ClearScreen()" id="clear">C</div>';
 }
 function BuildDecimalKeyboard()
 {
@@ -67,7 +69,7 @@ function BuildDecimalKeyboard()
 		div_value = div_value + '<div class="number" onclick="EnterToScreen('+i+')" id="'+element+'">'+numbers[i]+'</div>';
 	}
 	
-	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">10</div>`;
+	document.getElementById("keyboard").innerHTML = div_value+`<div id="mode">Mode: 10</div>`+'<div class="number" onclick="ClearScreen()" id="clear">C</div>';
 }
 //before keyboard, all they had to do was switch a thingy, now the new functions handle that too
 function SwitchToDecimal(){
@@ -102,4 +104,37 @@ function BinaryButtonLeave(){
 }
 function HexadecimalButtonLeave(){
     document.getElementById("hexadecimal").style.borderColor="forestgreen";
+}
+//function that adds information to screen
+function EnterToScreen(inputnumvalue){
+    var numbers = new Array(16);
+    numbers[0] = 0;
+    numbers[1] = 1;
+    numbers[2] = 2;
+    numbers[3] = 3;
+    numbers[4] = 4;
+    numbers[5] = 5;
+    numbers[6] = 6;
+    numbers[7] = 7;
+    numbers[8] = 8;
+    numbers[9] = 9;
+    numbers[10] = "A";
+    numbers[11] = "B";
+    numbers[12] = "C";
+    numbers[13] = "D";
+    numbers[14] = "E";
+    numbers[15] = "F";
+    Display.push(numbers[inputnumvalue]);
+    var DisplayedDisplay = Display.join('');
+    document.getElementById("screen").innerHTML = DisplayedDisplay
+}
+//simple screen clear function
+function ClearScreen(){
+    // Loop run while array length not zero
+    while (Display.length) {
+     
+        // Remove elements from array
+        Display.pop();
+    }
+    document.getElementById("screen").innerHTML = "0"
 }
